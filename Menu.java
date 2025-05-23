@@ -93,6 +93,14 @@ public class Menu extends JFrame {
                         output.setText("arctan(" + input1.getText() + ") = ");
                         equals = Math.atan(Double.parseDouble(input1.getText())) * 180/Math.PI;
                         break;
+                    case 11:
+                        output.setText("log(" + input1.getText() + ") = ");
+                        equals = Math.log10(Double.parseDouble(input1.getText()));
+                        break;
+                    case 12:
+                        output.setText("ln(" + input1.getText() + ") = ");
+                        equals = Math.log(Double.parseDouble(input1.getText()));
+                        break;
                     default:
                         output.setText("Error");
                         break;

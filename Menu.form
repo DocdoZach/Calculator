@@ -59,6 +59,8 @@
             <item value="arcsin"/>
             <item value="arccos"/>
             <item value="arctan"/>
+            <item value="log"/>
+            <item value="ln"/>
           </model>
         </properties>
       </component>
