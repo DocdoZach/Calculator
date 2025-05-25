@@ -63,6 +63,8 @@ public class Login extends JFrame {
     }
 
     public void login(Menu menu) {
+        boolean loggedIn = false;
+
         // Make credentials pair from input
         List<String> input = new ArrayList<>();
         input.add(username.getText());
@@ -79,20 +81,23 @@ public class Login extends JFrame {
                 setVisible(false);
                 menu.setVisible(true);
                 System.out.println("Successfully logged in as " + username.getText());
+                loggedIn = true;
                 break;
             }
         }
 
-        attempts--;
-        notice.setText("Invalid credentials. " + attempts + " attempts left.");
-        if(attempts == 0) {
-            JOptionPane.showMessageDialog(
-                    null,
-                    "You have ran out of login attempts.",
-                    "Error",
-                    JOptionPane.ERROR_MESSAGE
-            );
-            System.exit(0);
+        if(!loggedIn) {
+            attempts--;
+            notice.setText("Invalid credentials. " + attempts + " attempts left.");
+            if(attempts == 0) {
+                JOptionPane.showMessageDialog(
+                        null,
+                        "You have ran out of login attempts.",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE
+                );
+                System.exit(0);
+            }
         }
     }
 }
